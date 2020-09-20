@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -48,9 +51,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -132,9 +138,11 @@ REST_FRAMEWORK = {
 }
 
 
-from datetime import timedelta
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=5)
 }
 
+
+# users should be the name of your app, User should be the name of your model
+AUTH_USER_MODEL = 'users.User'
