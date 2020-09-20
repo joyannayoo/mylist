@@ -24,7 +24,8 @@ urlpatterns = [
     path('api/token/', jwt_views.TokenObtainPairView.as_view()),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view()),
     path('api/token/verify/', jwt_views.TokenVerifyView.as_view()),
-    path('api/users/', include('users.urls'))
+    path('api/users/', include('users.urls')),
+    path('api/categories/', include('categories.urls')),
 ]
 
 urlpatterns.append(path('api/docs/', include_docs_urls(
