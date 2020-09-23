@@ -1,6 +1,7 @@
 from django.urls import path
-from categories.views import ListCreateView
+from categories.views import ListView, CreateView
 
 urlpatterns = [
-    path('list', ListCreateView.as_view())
+    path('', ListView.as_view()),
+    path('new/', CreateView.as_view())
 ]

@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'categories',
-    'lists'
+    'boards',
+    'items',
 ]
 
 MIDDLEWARE = [

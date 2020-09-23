@@ -26,6 +26,8 @@ urlpatterns = [
     path('api/token/verify/', jwt_views.TokenVerifyView.as_view()),
     path('api/users/', include('users.urls')),
     path('api/categories/', include('categories.urls')),
+    path('api/boards/', include('boards.urls')),
+    path('api/items/', include('items.urls')),
 ]
 
 urlpatterns.append(path('api/docs/', include_docs_urls(
