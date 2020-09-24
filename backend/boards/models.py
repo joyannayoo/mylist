@@ -9,6 +9,7 @@ class Board(models.Model):
     category = models.ForeignKey(
         to=Category, related_name='board', on_delete=models.CASCADE, default=None, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.id}: {self.name}'
