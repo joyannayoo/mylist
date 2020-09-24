@@ -5,6 +5,6 @@ export const signUpAction = (email) => ({
   payload: email,
 });
 
-export const signUpFunction = (email) => async (dispatch) => {
-  console.log("in the email");
+export const signUpFunction = (data) => async (dispatch) => {
+  console.log("in the email", data);
 };
